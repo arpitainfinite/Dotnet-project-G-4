@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Employee_Management_System.Models.mvcDepartmentModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Department</h2>
+
+<p>
+    <a href="@Url.Action("AddorEdit","Department")" class="new-dep">New Department</a>
+</p>
+<table class="table">
+    <tr>
+        <th>Dep ID </th>
+        <th>Dep Name</th>
+        <th>Dep Username</th>
+        <th>Dep Password</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Depname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Depusername)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deppassword)
+            </td>
+            <td>
+
+                <a href="@Url.Action("AddorEdit","Department", new { id = item.DepId })" class="Edit-btn">Updated</a>
+                <a href="@Url.Action("Delete","Department", new { id = item.DepId })" class="Delete-btn">Delete</a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+

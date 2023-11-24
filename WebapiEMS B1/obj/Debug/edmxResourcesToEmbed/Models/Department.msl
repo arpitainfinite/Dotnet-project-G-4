@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="infiniteModelStoreContainer" CdmEntityContainer="infiniteEntities">
+    <EntitySetMapping Name="DemoChecks">
+      <EntityTypeMapping TypeName="infiniteModel.DemoCheck">
+        <MappingFragment StoreEntitySet="DemoCheck">
+          <ScalarProperty Name="DepId" ColumnName="DepId" />
+          <ScalarProperty Name="Depname" ColumnName="Depname" />
+          <ScalarProperty Name="Depusername" ColumnName="Depusername" />
+          <ScalarProperty Name="Deppassword" ColumnName="Deppassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
