@@ -278,3 +278,10 @@ body {
     top: 15px;
     left: 80px;
 }
+
+.Error_mes {
+    position: absolute;
+    top: 10px;
+    justify-items:right;
+    right: 10px;
+}

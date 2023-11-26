@@ -24,111 +24,114 @@
 
 
     @Html.HiddenFor(model => model.Emp_ID)
-<form class="w3-container">
-    <div id="col-1">
-        <div class="custom-form">
+    <form class="w3-container">
+        <div id="col-1">
+            <div class="custom-form">
 
-            <div class="for-se">
+                <div class="for-se">
 
-                <p>
-                    <lable>First Name</lable>
-                    @Html.EditorFor(model => model.Emp_First_Name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Emp_First_Name)
-                </p>
+                    <p>
+                        <lable>First Name</lable>
+                        @Html.EditorFor(model => model.Emp_First_Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Emp_First_Name)
+                    </p>
 
-                <p>
-                    <lable>Last Name</lable>
-                    @Html.EditorFor(model => model.Emp_Last_Name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Emp_Last_Name)
-                </p>
+                    <p>
+                        <lable>Last Name</lable>
+                        @Html.EditorFor(model => model.Emp_Last_Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Emp_Last_Name)
+                    </p>
 
-                <p>
-                    <lable>Date Of Birth</lable>
-                    @Html.EditorFor(model => model.Emp_Date_of_Birth, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
-                </p>
+                    <p>
+                        <lable>Date Of Birth</lable>
+                        @Html.EditorFor(model => model.Emp_Date_of_Birth, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                    </p>
 
-                <p>
-                    <lable>Date Of Joining</lable>
-                    @Html.EditorFor(model => model.Emp_Date_of_Joining, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
-                </p>
+                    <p>
+                        <lable>Date Of Joining</lable>
+                        @Html.EditorFor(model => model.Emp_Date_of_Joining, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                    </p>
 
-                <p>
-                    <lable>Designation</lable>
-                    @Html.EditorFor(model => model.Emp_Designation, new { htmlAttributes = new { @class = "form-control" } })
-                </p>
+                    <p>
+                        <lable>Designation</lable>
+                        @Html.EditorFor(model => model.Emp_Designation, new { htmlAttributes = new { @class = "form-control" } })
+                    </p>
 
+                </div>
             </div>
         </div>
-    </div>
 
 
-    <div id="col-2">
-        <div class="custom-form">
-            <div class="for-se">
-                <p>
-                    <lable>Grade</lable>
-                    @Html.DropDownListFor(model => model.Emp_Grade, new SelectList(new[]
-{
-                "M1", "M2", "M3", "M4", "M5"
-            }), "Select Grade", new { @class = "form-control" })
-                </p>
-                <p>
-                    <lable>Basic</lable>
-                    @Html.EditorFor(model => model.Emp_Basic, new { htmlAttributes = new { @class = "form-control" } })
-                </p>
-                <p>
-                    <lable>Department Name</lable>
-                    @Html.DropDownListFor(model => model.Emp_Dept_Name, new SelectList(new[] { "1", "2", "3", "4" }), "Select Department", new { @class = "form-control" })
-                </p>
-                <p>
-                    <lable>Gender</lable>
-                    @Html.DropDownListFor(model => model.Emp_Gender, new SelectList(new[]
-{
-                new SelectListItem { Text = "Male", Value = "M" },
-                new SelectListItem { Text = "Female", Value = "F" },
-                new SelectListItem { Text = "Other", Value = "O" } // Add other options if needed
-            }, "Value", "Text"), "Select Gender", new { @class = "form-control" })
-                </p>
-                <p>
-                    <lable>Martial Status</lable>
-                    @Html.DropDownListFor(model => model.Emp_Marital_Status, new SelectList(new[]
-{
-               new SelectListItem { Text = "Single", Value = "S" },
-               new SelectListItem { Text = "Married", Value = "M" },
-               // Add other options if needed
-           }, "Value", "Text"), "Select Marital Status", new { @class = "form-control" })
-                </p>
+        <div id="col-2">
+            <div class="custom-form">
+                <div class="for-se">
+                    <p>
+                        <lable>Grade</lable>
+                        @Html.DropDownListFor(model => model.Emp_Grade, new SelectList(new[]
+    {
+                    "M1", "M2", "M3", "M4", "M5"
+                }), "Select Grade", new { @class = "form-control" })
+                    </p>
+                    <p>
+                        <lable>Basic</lable>
+                        @Html.EditorFor(model => model.Emp_Basic, new { htmlAttributes = new { @class = "form-control" } })
+                    </p>
+                    <p>
+                        <lable>Department Name</lable>
+                        @Html.DropDownListFor(model => model.Emp_Dept_Name, new SelectList(new[] { "1", "2", "3", "4" }), "Select Department", new { @class = "form-control" })
+                    </p>
+                    <p>
+                        <lable>Gender</lable>
+                        @Html.DropDownListFor(model => model.Emp_Gender, new SelectList(new[]
+    {
+                    new SelectListItem { Text = "Male", Value = "M" },
+                    new SelectListItem { Text = "Female", Value = "F" },
+                    new SelectListItem { Text = "Other", Value = "O" } // Add other options if needed
+                }, "Value", "Text"), "Select Gender", new { @class = "form-control" })
+                    </p>
+                    <p>
+                        <lable>Martial Status</lable>
+                        @Html.DropDownListFor(model => model.Emp_Marital_Status, new SelectList(new[]
+    {
+                   new SelectListItem { Text = "Single", Value = "S" },
+                   new SelectListItem { Text = "Married", Value = "M" },
+                   // Add other options if needed
+               }, "Value", "Text"), "Select Marital Status", new { @class = "form-control" })
+                    </p>
 
+                </div>
             </div>
         </div>
-    </div>
 
-    <div id="col-3">
-        <div class="custom-form">
-            <div class="for-se">
+        <div id="col-3">
+            <div class="custom-form">
+                <div class="for-se">
 
-                <p>
-                    <lable>Contact Number</lable>
-                    @Html.EditorFor(model => model.Emp_Contact_Num, new { htmlAttributes = new { @class = "form-control", type = "tel" } })
-                    @*Html.EditorFor(model => model.contactno, new { htmlAttributes = new { @class = "form-control", type = "tel" } })*@
-                    @Html.ValidationMessageFor(model => model.Emp_Contact_Num)
-                </p>
+                    <p>
+                        <lable>Contact Number</lable>
+                        @Html.EditorFor(model => model.Emp_Contact_Num, new { htmlAttributes = new { @class = "form-control", type = "tel" } })
+                        @*Html.EditorFor(model => model.contactno, new { htmlAttributes = new { @class = "form-control", type = "tel" } })*@
+                        @Html.ValidationMessageFor(model => model.Emp_Contact_Num)
+                    </p>
 
-                <p>
-                    <lable>Home Address</lable> <br />
-                    @Html.TextAreaFor(model => model.Emp_Home_Address, new { htmlAttributes = new { @class = "w3-input", @rows = "4", @cols = "100", @placeholder = "Name" } })
-                </p>
-                <p>
-                    <br />
-                    <input type="submit" value="Submit" id="Cre-3" class="Dep-sub-btn" />
-                </p>
+                    <p>
+                        <lable>Home Address</lable> <br />
+                        @Html.TextAreaFor(model => model.Emp_Home_Address, new { htmlAttributes = new { @class = "w3-input", @rows = "4", @cols = "100", @placeholder = "Name" } })
+                    </p>
+                    <p>
+                        <br />
+                        <input type="submit" value="Submit" id="Cre-3" class="Dep-sub-btn" />
+                    </p>
 
+                </div>
             </div>
         </div>
-    </div>
 
-</form>
-        }
+    </form>
+}
 
 
+<div class="Error_mes">
+    @Html.Partial("_Notifications")
+</div>
 

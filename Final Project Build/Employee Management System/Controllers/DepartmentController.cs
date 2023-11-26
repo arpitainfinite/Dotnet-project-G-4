@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Employee_Management_System.Extensions;
 
 namespace Employee_Management_System.Controllers
 {
@@ -33,7 +34,7 @@ namespace Employee_Management_System.Controllers
         [HttpPost]
         public ActionResult AddorEdit(mvcDepartmentModel Depv)
         {
-            if (Depv.User_Id == 0 && Depv.User_Name != null && Depv.User_Password != null )
+            if (Depv.User_Id == 0 && Depv.User_Name != null && Depv.User_Password != null && Depv.Department_Name != null)
             {
                 HttpResponseMessage response = GlobalVariables.WebApiClient.PostAsJsonAsync("Department_Details", Depv).Result;
                 return RedirectToAction("getempname", "MainPage");
@@ -43,8 +44,13 @@ namespace Employee_Management_System.Controllers
             //    HttpResponseMessage response = GlobalVariables.WebApiClient.PutAsJsonAsync("Department_Details/" + Depv.User_Id, Depv).Result;
             //    return RedirectToAction("getempname", "MainPage");
             //}
+            else if (Depv.User_Name == null || Depv.User_Password == null || Depv.Department_Name == null)
+            {
+                this.AddNotification("All the fields are Mandatory", NotificationType.ERROR);
+            }
 
             return RedirectToAction("AddorEdit", "Department");
+
         }
 
         public ActionResult Delete(int id)

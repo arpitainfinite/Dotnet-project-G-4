@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Employee_Management_System.Extensions;
 
 
 namespace Employee_Management_System.Controllers
@@ -23,6 +24,7 @@ namespace Employee_Management_System.Controllers
         public ActionResult Delete(int id)
         {
             HttpResponseMessage response = GlobalVariables.WebApiClient.DeleteAsync("Employee_Details/" + id.ToString()).Result;
+            this.AddNotification("Deleted Succesfully", NotificationType.SUCCESS);
             return RedirectToAction("getempname", "MainPage");
         }
 
