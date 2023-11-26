@@ -2,9 +2,11 @@ Select * from Department_Details
 Select * from Employee_Details
 Select * from Grade_Details
 
+select * from Demo
+
 select GETDATE()
 
-truncate table Department_Details
+truncate table Employee_Details
 
 set identity_insert [dbo].[Grade_Details] on
 go

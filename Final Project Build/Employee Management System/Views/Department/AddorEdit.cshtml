@@ -1,38 +1,68 @@
 ﻿@model Employee_Management_System.Models.mvcDepartmentModel
+
 @{
     ViewBag.Title = "AddorEdit";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="https://ajax.gooleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<div>
-    <a href="@Url.Action("getempname","MainPage")" class="New-Dep_Button">Back</a>
-    <h2>New Department</h2>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+@Styles.Render("~/Content/MainPage.css")
 
-    @using (Html.BeginForm())
-    {
-        @Html.HiddenFor(model => model.User_Id)
 
-        <div>
-            @Html.LabelFor(model => model.Department_Name)
-            @Html.EditorFor(model => model.Department_Name)
+<a href="@Url.Action("getempname","MainPage")" class="btn"><i class="fa fa-home"></i></a>
+
+<h2 id="newdephead">New Department</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.User_Id)
+<div class="for-se">
+
+    <form class="w3-container">
+        <p>
+            @Html.EditorFor(model => model.Department_Name, new { htmlAttributes = new { @class = "w3-input", @placeholder = "Name" } })
             @Html.ValidationMessageFor(model => model.Department_Name)
-        </div>
-
-        <div>
-            @Html.LabelFor(model => model.User_Name)
-            @Html.EditorFor(model => model.User_Name)
+        </p>
+        <p>
+            @Html.EditorFor(model => model.User_Name, new { htmlAttributes = new { @class = "w3-input", @placeholder = "Username" } })
             @Html.ValidationMessageFor(model => model.User_Name)
-        </div>
-
-        <div>
-            @Html.LabelFor(model => model.User_Password)
-            @Html.EditorFor(model => model.User_Password)
+        </p>
+        <p>
+            @Html.EditorFor(model => model.User_Password, new { htmlAttributes = new { @class = "w3-input", @placeholder = "Password" } })
             @Html.ValidationMessageFor(model => model.User_Password)
-        </div>
-
-        <div class="dep-submitbutton">
-            <input type="submit" value="Create" class="Dep-sub-btn" />
-        </div>
-    }
+        </p>
+        <p>
+            <input type="submit" value="Create" id="Cre-1" class="Dep-sub-btn" />
+        </p>
+    </form>
 
 </div>
+}
 
+
+
+<script>
+    const depname = document.getElementById('depname')
+    const errorElement = document.getElementById('error')
+
+    form.addEventListener('submit', (e) =>){
+        let messages = []
+        if (depname.value === '' depname.value == null) {
+            messages.push('Name is required')
+        }
+
+        if (messages.length > 0) {
+            e.preventDefault()
+            errorElement.innerText = messages.join(', ')
+        }
+
+    }
+
+</script>

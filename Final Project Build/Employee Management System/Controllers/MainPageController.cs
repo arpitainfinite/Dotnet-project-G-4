@@ -43,7 +43,7 @@ namespace Employee_Management_System.Controllers
         //        obj = displaydata.Result;
         //    }
         //    return View(obj);
-        }
+        //}
 
     }
 }

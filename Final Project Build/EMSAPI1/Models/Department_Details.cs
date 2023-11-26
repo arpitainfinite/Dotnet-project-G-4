@@ -11,12 +11,15 @@ namespace EMSAPI1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Department_Details
     {
         public int User_Id { get; set; }
+       
         public string User_Name { get; set; }
-        public string User_Password { get; set; }
+        
+        public string User_Password { get; set; }      
         public string Department_Name { get; set; }
     }
 }
