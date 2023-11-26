@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/LoginPage.css")
+    <!-- Design by foolishdeveloper.com -->
+    <title>Glassmorphism login Form Tutorial in html css</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+</head>
+<body>
+    <div class="Login-form">
+        <div class="background">
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <form  method="post" action="@Url.Action("EmployeeManagement","Home")">
+            <h3>Sign In</h3>
+
+            <div class="form-floating">
+                <img src="~/Image/envelope.png" alt="Italian Trulli" id="email-icon">
+                <input type="text" placeholder="Email" class="email-field" id="username" name="username">
+            </div>
+
+            <div class="form-floating">
+                <img src="~/Image/locked.png" alt="Italian Trulli" id="pass-icon">
+                <input type="password" placeholder="Password" class="email-field" id="password" name="password">
+            </div>
+            <button>SIGN IN</button>
+        </form>
+    </div>
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+<p>@ViewBag.ErrorMessage</p>}
+
+</body>
+</html>

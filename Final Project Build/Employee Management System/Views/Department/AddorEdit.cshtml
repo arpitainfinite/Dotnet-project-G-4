@@ -1,0 +1,38 @@
+﻿@model Employee_Management_System.Models.mvcDepartmentModel
+@{
+    ViewBag.Title = "AddorEdit";
+}
+
+<div>
+    <a href="@Url.Action("getempname","MainPage")" class="New-Dep_Button">Back</a>
+    <h2>New Department</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.User_Id)
+
+        <div>
+            @Html.LabelFor(model => model.Department_Name)
+            @Html.EditorFor(model => model.Department_Name)
+            @Html.ValidationMessageFor(model => model.Department_Name)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.User_Name)
+            @Html.EditorFor(model => model.User_Name)
+            @Html.ValidationMessageFor(model => model.User_Name)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.User_Password)
+            @Html.EditorFor(model => model.User_Password)
+            @Html.ValidationMessageFor(model => model.User_Password)
+        </div>
+
+        <div class="dep-submitbutton">
+            <input type="submit" value="Create" class="Dep-sub-btn" />
+        </div>
+    }
+
+</div>
+

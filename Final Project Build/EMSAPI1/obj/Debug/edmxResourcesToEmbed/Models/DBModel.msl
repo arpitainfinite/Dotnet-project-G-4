@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EMSModelStoreContainer" CdmEntityContainer="DBModel">
+    <EntitySetMapping Name="Department_Details">
+      <EntityTypeMapping TypeName="EMSModel.Department_Details">
+        <MappingFragment StoreEntitySet="Department_Details">
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grade_Details">
+      <EntityTypeMapping TypeName="EMSModel.Grade_Details">
+        <MappingFragment StoreEntitySet="Grade_Details">
+          <ScalarProperty Name="Grade_Id" ColumnName="Grade_Id" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Min_Salary" ColumnName="Min_Salary" />
+          <ScalarProperty Name="Max_Salary" ColumnName="Max_Salary" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_Details">
+      <EntityTypeMapping TypeName="EMSModel.Employee_Details">
+        <MappingFragment StoreEntitySet="Employee_Details">
+          <ScalarProperty Name="Emp_Contact_Num" ColumnName="Emp_Contact_Num" />
+          <ScalarProperty Name="Emp_Home_Address" ColumnName="Emp_Home_Address" />
+          <ScalarProperty Name="Emp_Marital_Status" ColumnName="Emp_Marital_Status" />
+          <ScalarProperty Name="Emp_Gender" ColumnName="Emp_Gender" />
+          <ScalarProperty Name="Emp_Dept_Name" ColumnName="Emp_Dept_Name" />
+          <ScalarProperty Name="Emp_Basic" ColumnName="Emp_Basic" />
+          <ScalarProperty Name="Emp_Grade" ColumnName="Emp_Grade" />
+          <ScalarProperty Name="Emp_Designation" ColumnName="Emp_Designation" />
+          <ScalarProperty Name="Emp_Date_of_Joining" ColumnName="Emp_Date_of_Joining" />
+          <ScalarProperty Name="Emp_Date_of_Birth" ColumnName="Emp_Date_of_Birth" />
+          <ScalarProperty Name="Emp_Last_Name" ColumnName="Emp_Last_Name" />
+          <ScalarProperty Name="Emp_First_Name" ColumnName="Emp_First_Name" />
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

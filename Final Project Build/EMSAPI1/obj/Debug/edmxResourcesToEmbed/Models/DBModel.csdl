@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Department_Details">
+    <Key>
+      <PropertyRef Name="User_Id" />
+    </Key>
+    <Property Name="User_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="User_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Department_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Grade_Details">
+    <Key>
+      <PropertyRef Name="Grade_Id" />
+    </Key>
+    <Property Name="Grade_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Grade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Min_Salary" Type="Int32" />
+    <Property Name="Max_Salary" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="DBModel" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Department_Details" EntityType="Self.Department_Details" />
+    <EntitySet Name="Grade_Details" EntityType="Self.Grade_Details" />
+    <EntitySet Name="Employee_Details" EntityType="EMSModel.Employee_Details" />
+  </EntityContainer>
+  <EntityType Name="Employee_Details">
+    <Key>
+      <PropertyRef Name="Emp_ID" />
+    </Key>
+    <Property Name="Emp_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Emp_First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Date_of_Birth" Type="DateTime" Precision="0" />
+    <Property Name="Emp_Date_of_Joining" Type="DateTime" Precision="0" />
+    <Property Name="Emp_Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Grade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Basic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Dept_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Marital_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Home_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Contact_Num" Type="Int32" />
+  </EntityType>
+</Schema>

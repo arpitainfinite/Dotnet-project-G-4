@@ -1,0 +1,134 @@
+﻿@model Employee_Management_System.Models.mvcEmployeeModel
+
+@{
+    ViewBag.Title = "AddorEdit";
+}
+
+
+<div class="custom-form">
+    <a href="@Url.Action("getempname","MainPage")" class="New-Dep_Button">Back</a>
+    <h2>New Employee</h2>
+    @using (Html.BeginForm())
+    {
+
+        @Html.HiddenFor(model => model.Emp_ID)
+        <!-- First Name -->
+        <div>
+            @Html.LabelFor(model => model.Emp_First_Name)
+            @Html.EditorFor(model => model.Emp_First_Name)
+            @Html.ValidationMessageFor(model => model.Emp_First_Name)
+        </div>
+
+
+        <!-- Last Name -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Emp_Last_Name)
+            @Html.EditorFor(model => model.Emp_Last_Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Emp_Last_Name)
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Emp_Date_of_Birth)
+            @Html.EditorFor(model => model.Emp_Date_of_Birth, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+        </div>
+
+        <!-- Date of Joining -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Emp_Date_of_Joining)
+            @Html.EditorFor(model => model.Emp_Date_of_Joining, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+        </div>
+
+        <!-- Designation -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Emp_Designation)
+            @Html.EditorFor(model => model.Emp_Designation, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+
+            <!-- Grade -->
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.grade)
+                    @Html.EditorFor(model => model.grade, new { htmlAttributes = new { @class = "form-control" } })
+                </div>*@
+            <div class="form-group">
+                @Html.LabelFor(model => model.Emp_Grade)
+                @Html.DropDownListFor(model => model.Emp_Grade, new SelectList(new[]
+                {
+                    "M1", "M2", "M3", "M4", "M5"
+                }), "Select Grade", new { @class = "form-control" })
+            </div>
+
+            <!-- Basic -->
+            <div class="form-group">
+                @Html.LabelFor(model => model.Emp_Basic)
+                @Html.EditorFor(model => model.Emp_Basic, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+
+            <!-- Department -->
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.deptid)
+                    @Html.TextBoxFor(model => model.deptid, new {htmlAttributes = new { @class = "form-control", @type = "int?" } })
+                    @Html.ValidationMessageFor(model => model.deptid)
+                </div>*@
+            <div class="form-group">
+                @Html.LabelFor(model => model.Emp_Dept_Name)
+                @Html.DropDownListFor(model => model.Emp_Dept_Name, new SelectList(new[] { "1", "2", "3", "4" }), "Select Department", new { @class = "form-control" })
+            </div>
+
+            <!-- Gender -->
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.gender)
+                    @Html.DropDownListFor(model => model.gender, new SelectList(new[] { "Male", "Female1", "Other" }), "Select Gender", new { @class = "form-control" })
+                </div>*@
+            <div class="form-group">
+                @Html.LabelFor(model => model.Emp_Gender)
+                @Html.DropDownListFor(model => model.Emp_Gender, new SelectList(new[]
+                {
+                    new SelectListItem { Text = "Male", Value = "M" },
+                    new SelectListItem { Text = "Female", Value = "F" },
+                    new SelectListItem { Text = "Other", Value = "O" } // Add other options if needed
+                }, "Value", "Text"), "Select Gender", new { @class = "form-control" })
+            </div>
+
+            <!-- Marital Status -->
+            @* <!--<div class="form-group">
+                    @Html.LabelFor(model => model.maritalstatus)
+                    @Html.DropDownListFor(model => model.maritalstatus, new SelectList(new[] { "Single", "Married", "Divorced", "Widowed" }), "Select Marital Status", new { @class = "form-control" })
+                </div>-->*@
+            <div class="form-group">
+                @Html.LabelFor(model => model.Emp_Marital_Status)
+                @Html.DropDownListFor(model => model.Emp_Marital_Status, new SelectList(new[]
+                {
+                    new SelectListItem { Text = "Single", Value = "S" },
+                    new SelectListItem { Text = "Married", Value = "M" },
+                    // Add other options if needed
+                }, "Value", "Text"), "Select Marital Status", new { @class = "form-control" })
+            </div>
+
+            <!-- Home Address -->
+            <div class="form-group">
+                @Html.LabelFor(model => model.Emp_Home_Address)
+                @Html.TextAreaFor(model => model.Emp_Home_Address, new { htmlAttributes = new { @class = "form-control", @rows = "4" } })
+            </div>
+
+            <!-- Contact Number -->
+            <div class="form-group">
+                @Html.LabelFor(model => model.Emp_Contact_Num)
+                @Html.EditorFor(model => model.Emp_Contact_Num, new { htmlAttributes = new { @class = "form-control", type = "tel" } })
+                @*Html.EditorFor(model => model.contactno, new { htmlAttributes = new { @class = "form-control", type = "tel" } })*@
+                @Html.ValidationMessageFor(model => model.Emp_Contact_Num)
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-submit btn-primary btn-block" />
+            </div>
+            }
+        </div>
+</div>
+
+
+
+
+
+
