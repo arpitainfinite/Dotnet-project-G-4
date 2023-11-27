@@ -9,6 +9,7 @@ namespace Employee_Management_System.Models
 {
     public class mvcDepartmentModel
     {
+        public List<SelectListItem> DepNames { get; set; }
         public int User_Id { get; set; }
         public string User_Name { get; set; }
         public string User_Password { get; set; }

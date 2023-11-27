@@ -6,6 +6,9 @@ using System.Web.Mvc;
 using Employee_Management_System.Models;
 using System.Net.Http;
 using Employee_Management_System.Extensions;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Employee_Management_System.Controllers
 {

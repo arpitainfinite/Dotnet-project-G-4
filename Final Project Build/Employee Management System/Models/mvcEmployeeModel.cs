@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-
+using System.Web.Mvc;
 
 namespace Employee_Management_System.Models
 {
@@ -34,5 +34,6 @@ namespace Employee_Management_System.Models
         public string Emp_Home_Address { get; set; }
 
         public Nullable<int> Emp_Contact_Num { get; set; }
+
     }
 }
